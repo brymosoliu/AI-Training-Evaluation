@@ -5,6 +5,18 @@ My objective is to develop practical expertise in AI training operations, data a
 
 ---
 
+## Skills Demonstrated
+
+- Data annotation and labeling
+- Dataset quality assurance
+- Annotation guideline development
+- Reviewer calibration
+- Sentiment analysis
+- Text classification
+- Named entity recognition
+- Error analysis
+- Feedback writing
+- AI training data preparation
 
 ---
 

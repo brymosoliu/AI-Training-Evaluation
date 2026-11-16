@@ -1,7 +1,7 @@
 # Customer support text annotation guide
 
 ## Purpose and scope
-This synthetic dataset supports training and evaluating customer-support classifiers and NER systems. Assign one value per record for sentiment, intent, category, and urgency. Mark every explicit supported entity in `entities_json`. It contains 120 fictional records; identifying details are fictional examples.
+This synthetic dataset supports training and evaluating customer-support classifiers and NER systems. Assign one value per record for sentiment, intent, category, and urgency. Mark every explicit supported entity in `entities_json`. It contains 150 fictional records; identifying details are fictional examples.
 
 ---
 
@@ -13,20 +13,26 @@ This synthetic dataset supports training and evaluating customer-support classif
 - `negative`: dissatisfaction, complaint, concern, or a clearly unfavorable experience.
 - Label expressed attitude, not likely outcome. A polite complaint remains negative.
 
+---
+
 ### Intent
-Choose one primary action: `refund_request`, `payment_failure`, `invoice_request`, `subscription_cancel`, `account_access`, `password_reset`, `shipping_status`, `late_delivery`, `address_change`, `product_defect`, `technical_howto`, or `warranty_question`. Prefer the most specific intent supported by the text.
+Choose one primary action: Transfer Issue; Password Reset; App Error; Product Information; Complaint Follow-up; Airtime/Data Issue; Account Opening; Card Issue; Complaint; Profile Update; Balance Discrepancy; Statement Request; OTP Issue; Service Feedback; Unauthorised Transaction; Fees and Charges; POS Issue; Contact Channel Issue; Account Status; Account Security; Transfer Information; Wrong Transfer; Product Feedback; Duplicate Transaction
+. Prefer the most specific intent supported by the text.
+
+---
 
 ### Category
-Use the corresponding group: `Billing & payments` (refund, payment, invoice); `Account & subscription` (cancellation, account access, password reset); `Orders & delivery` (tracking, late delivery, address change); `Product & technical support` (defect, setup/how-to, warranty). Category must agree with intent.
+Use the corresponding group: Transfers; Account Access; Technical Support; Account Information; Service Feedback; Airtime; Account Services; Card Services; Service Complaint; Transaction Security; Pricing; POS; Contact Support; Security; Product Feedback. Category must agree with intent.
+
+---
 
 ### Urgency
-- `low`: routine question or request with no time pressure.
-- `medium`: inconvenience or an action with stated near-term timing.
-- `high`: significant disruption, failed access/payment, damaged product, or explicitly urgent delivery.
-- `critical`: immediate severe impact or explicit emergency-level language. Use sparingly; urgency is triage priority, not sentiment intensity.
+- `low`
+- `medium`
+- `high`
+- `critical`
 
-### Named entities and offsets
-`entities_json` is an array of objects with `text`, `type`, `start`, and `end`. Offsets count Unicode code points from zero; start is inclusive and end exclusive. The text slice must exactly equal the entity text. Types used are `ORDER_ID`, `MONEY`, `DATE`, `EMAIL`, `LOCATION`, and `PRODUCT`. Annotate explicit spans only; do not infer missing entities. Use `[]` when none are present.
+---
 
 ## Consistency and adjudication
 1. Read the full message before labeling.
